@@ -5,3 +5,4 @@ const headingSecond = React.createElement("h1", {className:"heading-two"}, "Head
 const container = React.createElement("div", {id:"container"}, [headingFirst, headingSecond])
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(container)
+

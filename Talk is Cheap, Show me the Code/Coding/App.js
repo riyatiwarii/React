@@ -2044,8 +2044,8 @@ const RestaurantData = [
 ]
 
 const RestaurantCard = ({restaurant}) => {
+    console.log(restaurant);
     const {name, cloudinaryImageId, cuisines, avgRating, slaString, costForTwoString} = restaurant.data.data
-    console.log(restaurant.data.data);
     return (<div className='hotel'> 
         <a href=''>
             <img className="_2tuBw _12_oN" alt="Cuisine image" width="254" height="160" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+ cloudinaryImageId}/>

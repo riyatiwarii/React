@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-header{  
-    /* background-color: rgb(203, 203, 203);   */
-    background-color: rgb(187, 185, 185);  
-}
-
 .logo{
     width: 7%;
     padding-top: 1em;
@@ -58,12 +53,13 @@ a:hover{
 
   #cards{
     background-color:#ffffff;  
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 20px;
     width: 80vw;
-    margin:auto;
-    margin-top:10px;
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
   }
 
   .hotel{

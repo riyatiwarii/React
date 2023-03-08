@@ -2043,7 +2043,7 @@ const RestaurantData = [
     }
 ]
 
-const RestaurantCard = ({restaurant}) => {
+const RestaurantCard = ({...restaurant}) => {
     console.log(restaurant);
     const {name, cloudinaryImageId, cuisines, avgRating, slaString, costForTwoString} = restaurant.data.data
     return (<div className='hotel'> 
@@ -2066,20 +2066,11 @@ const RestaurantCard = ({restaurant}) => {
 
 const RestaurantCardsContainer = () => (
     <div id="cards">
-        <RestaurantCard restaurant = {RestaurantData[0]}/>
-        <RestaurantCard restaurant = {RestaurantData[1]}/>
-        <RestaurantCard restaurant = {RestaurantData[2]}/>
-        <RestaurantCard restaurant = {RestaurantData[3]}/>
-        <RestaurantCard restaurant = {RestaurantData[4]}/>
-        <RestaurantCard restaurant = {RestaurantData[5]}/>
-        <RestaurantCard restaurant = {RestaurantData[6]}/>
-        <RestaurantCard restaurant = {RestaurantData[7]}/>
-        <RestaurantCard restaurant = {RestaurantData[8]}/>
-        <RestaurantCard restaurant = {RestaurantData[9]}/>
-        <RestaurantCard restaurant = {RestaurantData[10]}/>
-        <RestaurantCard restaurant = {RestaurantData[11]}/>
-        <RestaurantCard restaurant = {RestaurantData[12]}/>
-        <RestaurantCard restaurant = {RestaurantData[13]}/>
+        {
+            RestaurantData.map((restrauant) => {
+                return <RestaurantCard {...restrauant}/>
+            })
+        }
     </div>
 )
 
@@ -2101,3 +2092,4 @@ const Body = () => (
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<Body/>)
+

@@ -3,6 +3,15 @@ import ReactDOM from "react-dom/client";
 import logo from "/Coding/logo2.png"
 import "./style.css"
 
+// fetch("http://localhost:5500/Coding/response.json")
+// .then(response => {
+//    return response.json();
+// })
+// .then(data => console.log(data));
+
+// import data from './response.json';
+// console.log(data);
+
 const Logo = () => (
     <img className = "logo" src = {logo}></img>
 )
@@ -2044,7 +2053,6 @@ const RestaurantData = [
 ]
 
 const RestaurantCard = ({...restaurant}) => {
-    console.log(restaurant);
     const {name, cloudinaryImageId, cuisines, avgRating, slaString, costForTwoString} = restaurant.data.data
     return (<div className='hotel'> 
         <a href=''>
@@ -2067,8 +2075,8 @@ const RestaurantCard = ({...restaurant}) => {
 const RestaurantCardsContainer = () => (
     <div id="cards">
         {
-            RestaurantData.map((restrauant) => {
-                return <RestaurantCard {...restrauant}/>
+            RestaurantData.map((restrauant, index) => {
+                return <RestaurantCard {...restrauant} key={index} />
             })
         }
     </div>

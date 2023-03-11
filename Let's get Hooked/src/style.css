@@ -143,4 +143,39 @@ a:hover{
     visibility:hidden;
   }
 
+  .food-search {
+    background-image: url(https://i.postimg.cc/YqCLP8mc/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5.5rem 0;
+    text-align: center;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+
+.food-search input[type=text] {
+    width: 50%;
+    padding: 0.8rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+}
+ 
+.btn-primary {
+    background-color: #ae5151;
+    width: 10%;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: rgb(131, 61, 61);
+
+}
   

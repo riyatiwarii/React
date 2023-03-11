@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 7%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.navitems{
+    list-style: none;
+}
+
+.navbar{
+    width: 78%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
+
+span{
+    font-size: 1.2rem;
+}
+
+a{
+    font-size: 16px;
+    font-weight: 500;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-decoration:none;
+    color:#3d4152;
+  }
+  
+a:hover{
+    color:#bc6921;
+    fill:#bc6921;;
+  }
+
+  svg, i{
+    margin-right: 0.2em;
+  }
+
+  #cards{
+    background-color:#ffffff;  
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    width: 80vw;
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .hotel{
+    font-family: ProximaNova,Arial,Helvetica Neue,sans-serif;
+    padding:20px;
+  }
+
+  .hotel a{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hotel:hover{
+    box-shadow: 2px 2px 10px 0px lightgray, -2px -2px 10px 0px lightgray;
+  }
+  
+  .hotelRatings{
+    background-color: #db7c38;
+    font-size:13px;
+    color:#ffffff;
+    display: inline-flex;
+    height: 20px;
+    width: 43px;
+    padding: 2px 5px;
+    font-weight: 400;
+  }
+
+  .hotelDetails > span{
+    font-size: 12px;
+  }
+   
+  .hotelDetails{
+    display:flex;
+    gap: 1em;
+    align-items:center;
+    color: #535665;
+    font-weight:400;
+  }
+  
+  .hotelTitle{
+    margin:20px auto;
+  }
+  
+  .hotelDescription{
+    font-weight:300;
+    color: #686b78;
+    font-size: 13px;
+  }
+  
+  .hotelName{
+    font-size: 17px;
+    font-weight: 600;
+    word-break: break-word;
+    color:#282c3f;;
+    margin:5px auto 5px auto;
+  }
+  
+  .hotelDiscount{
+    border-top: 1px solid lightgrey;
+    color: #8a584b;
+    font-weight:400;
+    font-size:15px;
+    padding:6px;
+    margin-top:10px;
+  }
+  
+  .hotelDiscount:before{
+    font-family:icomoon;
+    content: "\E921   ";
+  }
+  
+  .hotelView{
+    border-top: 1px solid lightgrey;
+    padding-top:10px;
+    color: #5d8ed5;
+    text-align:center;
+    font-size:13px;
+    font-weight:600;
+    margin:0 auto;
+    width:100%;
+    visibility:hidden;
+  }
+
+  

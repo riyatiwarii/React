@@ -2,35 +2,38 @@ import RestaurantData from "./RestaurantData";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 
-const filterData = (searchText, RestaurantData) => {
-    return RestaurantData.filter((restaurantdata) => restaurantdata.data.data.name.toLowerCase().includes(searchText.toLowerCase()) )
-}
-
 const RestaurantCardsContainer = () => {
-    let [searchText, setSearchText] = useState("")
-    let [restaurants, setRestaurants] = useState(RestaurantData)
+    // let searchText = "Hello"
+    const [searchText, setSearchText] = useState("")
+    const [restaurantList, setRestaurantList] = useState(RestaurantData)
+    const searchRestaurant = (searchText, RestaurantData) => {
+        const filteredData = RestaurantData.filter(cardData => {
+            if(cardData.data.data.name.toLowerCase().includes(searchText.toLowerCase())){
+                return cardData
+            }
+        } )
+        return filteredData
+    }
+    
     return (
         <>
         <div className="food-search">
             <input type="text" name="search" placeholder="Search for restaurants..." value={searchText} onChange = {(e) => {
+                // searchText = e.target.value
                 setSearchText(e.target.value)
-                if(searchText === ''){
-                    setRestaurants(RestaurantData)
-                    console.log( searchText, RestaurantData);
+                console.log(searchText);
+                if(e.target.value === ""){
+                    setRestaurantList(RestaurantData)
                 }
-            }} />
-            <button className="btn btn-primary" onClick={
-                () => {
-                    const filteredData = filterData(searchText, restaurants)
-                    setRestaurants(filteredData)
-                    setSearchText("")
-                    console.log( searchText, filteredData);
-                }
-             } >Search</button>
+            } } />
+            <button className="btn btn-primary" onClick={ () => {
+                let receiveFilteredData = searchRestaurant(searchText, RestaurantData)
+                setRestaurantList(receiveFilteredData)
+            } } >Search</button>
         </div>
         <div id="cards">
             {
-                restaurants.map((restrauant, index) => {
+                restaurantList.map((restrauant, index) => {
                     return <RestaurantCard {...restrauant} key={index} />
                 })
             }

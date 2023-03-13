@@ -1,4 +1,4 @@
-const ShimmerUI = () => {
+const ShimmerUIcard = () => {
     return (
         <div className='hotel shimmer'> 
         <a href=''>
@@ -14,6 +14,21 @@ const ShimmerUI = () => {
             <span className='hotelCost shimmer'></span>
             </div>
         </a>
+        </div>
+    )
+}
+
+const ShimmerUI = () => {
+    return(
+        <div id="cards">
+        <ShimmerUIcard />
+        <ShimmerUIcard />
+        <ShimmerUIcard />
+        <ShimmerUIcard />
+        <ShimmerUIcard />
+        <ShimmerUIcard />
+        <ShimmerUIcard />
+        <ShimmerUIcard />
         </div>
     )
 }

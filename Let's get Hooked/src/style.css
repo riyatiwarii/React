@@ -179,3 +179,39 @@ a:hover{
 
 }
   
+/* .shimmer{
+  background:#e2e3e4;
+  background-image:linear-gradient(to right, #e2e3e4 0%, #f6f7f8 20%, #e2e3e4 40%, #e2e3e4 100%);
+  background-repeat:no-repeat
+} */
+
+.shimmer {
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  animation : shim infinite 1.2s linear;
+}
+@keyframes shim {
+  0% { background-position: -468px 0;}
+  100% { background-position: 468px 0;}
+}
+
+.shimmer-img{
+  width: 254px;
+  height: 160px;
+  background: rgba(82, 81, 81, 0.12);
+}
+
+.shimmer-title{
+  width:100%;
+  height:40px;
+  margin-top : 25px;
+  background: rgba(82, 81, 81, 0.12);
+}
+
+.shimmer-details{
+  width:100%;
+  height:23px;
+  margin-top : 20px;
+  background: rgba(82, 81, 81, 0.12);
+}

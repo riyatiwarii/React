@@ -1,5 +1,6 @@
 import RestaurantData from "./RestaurantData";
 import RestaurantCard from "./RestaurantCard";
+import ShimmerUI from "./ShimmerUI"
 import { useState } from "react";
 
 const RestaurantCardsContainer = () => {
@@ -32,6 +33,7 @@ const RestaurantCardsContainer = () => {
             } } >Search</button>
         </div>
         <div id="cards">
+        <ShimmerUI />
             {
                 restaurantList.map((restrauant, index) => {
                     return <RestaurantCard {...restrauant} key={index} />

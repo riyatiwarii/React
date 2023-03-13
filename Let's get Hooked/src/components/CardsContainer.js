@@ -28,6 +28,8 @@ const RestaurantCardsContainer = () => {
         } )
         return filteredData
     }
+
+    
     
     return allRestaurantList.length === 0 ? <ShimmerUI/> : (
         <>
@@ -44,8 +46,9 @@ const RestaurantCardsContainer = () => {
             } } >Search</button>
         </div>
         <div id="cards">
+           
             {
-                filteredRestaurantList.map((restrauant, index) => {
+                filteredRestaurantList.length === 0 ? <h1>No Restaurant found</h1> : filteredRestaurantList.map((restrauant, index) => {
                     return <RestaurantCard {...restrauant} key={index} />
                 })
             }

@@ -1,12 +1,25 @@
 import RestaurantData from "./RestaurantData";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI"
-import { useState } from "react";
+import { useState , useEffect} from "react";
+import { API_URL } from "./Constants";
 
 const RestaurantCardsContainer = () => {
     // let searchText = "Hello"
     const [searchText, setSearchText] = useState("")
-    const [restaurantList, setRestaurantList] = useState(RestaurantData)
+    const [restaurantList, setRestaurantList] = useState([])
+
+    useEffect(() => {
+        getResaurantsData();
+    })
+
+    async function getResaurantsData(){
+        const data = await fetch(API_URL)
+        const json = await data.json()        
+        setRestaurantList(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants)
+        
+    }
+
     const searchRestaurant = (searchText, RestaurantData) => {
         const filteredData = RestaurantData.filter(cardData => {
             if(cardData.data.data.name.toLowerCase().includes(searchText.toLowerCase())){
@@ -33,7 +46,6 @@ const RestaurantCardsContainer = () => {
             } } >Search</button>
         </div>
         <div id="cards">
-        <ShimmerUI />
             {
                 restaurantList.map((restrauant, index) => {
                     return <RestaurantCard {...restrauant} key={index} />

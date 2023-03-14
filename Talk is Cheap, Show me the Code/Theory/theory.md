@@ -120,7 +120,7 @@ The parent component renders the child components and the `name` prop is being p
 Important Note : `props` should be treated as read-only and should not be modified within a component. If a component needs to modify data, it should use state instead.
 
 ## Q: What is `Config Driven UI`?
-`Config Driven UI` is based on the configurations of the data an application receives. It is rather a good practice to use config driven UIs to make application for dynamic. It is a very common & basic approach to interact with the User. It provides a generic interface to develop things which help your project scale well. It saves a lot of development time and effort.
+`Config Driven UI` is based on the configurations of the data an application receives. By defining the UI structure and behavior through configuration files, UI designers can focus on designing the UI, while developers can focus on implementing the business logic that powers the UI. This approach also makes it easier to maintain and update UIs over time, as changes can be made in the configuration files rather than through extensive coding. Overall, config-driven UI can lead to more efficient and effective development processes and ultimately result in better user experiences.
 
 ## Q: Difference between `Virtual DOM` and `Real DOM`?
 DOM (Document Object Model) and Virtual DOM (Virtual Document Object Model) are both ways of representing the structure of a web page in a tree-like structure, but they differ in their implementation and purpose.

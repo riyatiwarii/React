@@ -45,6 +45,7 @@ const RestaurantCardsContainer = () => {
                 setFilteredRestaurantList(getFilteredData)
             } } >Search</button>
         </div>
+        
         <div id="cards">
             {
                 filteredRestaurantList.length === 0 ? <h1>No Restaurant found</h1> : filteredRestaurantList.map((restrauant, index) => {

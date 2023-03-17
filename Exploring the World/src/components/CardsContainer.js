@@ -1,4 +1,3 @@
-import RestaurantData from "./RestaurantData";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI"
 import { useState , useEffect} from "react";
@@ -8,7 +7,7 @@ const RestaurantCardsContainer = () => {
     // let searchText = "Hello"
     const [searchText, setSearchText] = useState("")
     const [allRestaurantList, setAllRestaurantList] = useState([])
-    const [filteredRestaurantList, setFilteredRestaurantList] = useState(allRestaurantList)
+    const [filteredRestaurantList, setFilteredRestaurantList] = useState()
     useEffect(() => {
         getResaurantsData();
     }, [])
@@ -29,8 +28,6 @@ const RestaurantCardsContainer = () => {
         return filteredData
     }
 
-    
-    
     return allRestaurantList.length === 0 ? <ShimmerUI/> : (
         <>
         <div className="food-search">

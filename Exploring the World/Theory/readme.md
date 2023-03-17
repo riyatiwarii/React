@@ -18,4 +18,4 @@ Many challenges stemmed from this architecture:
 ### What exactly is Microservices?
 Microservice is a small, loosely coupled distributed service. It allows you to take a large application and decompose or break it into easily manageable small components with narrowly defined responsibilities. It is considered the building block of modern applications. Microservices can be written in a variety of programming languages, and frameworks, and each service acts as a mini-application on its own.
 
-
+![monolith-microservices](https://user-images.githubusercontent.com/102414072/225936928-2d132556-638c-4e11-aa0c-36aa4664a230.png)

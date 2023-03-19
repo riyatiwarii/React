@@ -19,7 +19,7 @@ const Form = () => (
                     <label for="company-website" class="block text-sm font-medium leading-6 text-gray-900">Your Portfolio</label>
                     <div class="mt-2 flex rounded-md shadow-sm">
                       <span class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">http://</span>
-                      <input type="text" name="company-website" id="company-website" class="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6" placeholder="www.example.com"/>
+                      <input type="text" name="company-website" id="company-website" class="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 outline-gray-300" placeholder="www.example.com"/>
                     </div>
                   </div>
                 </div>
@@ -27,7 +27,7 @@ const Form = () => (
                 <div>
                   <label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
                   <div class="mt-2">
-                    <textarea id="about" name="about" rows="3" class="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:py-1.5 sm:text-sm sm:leading-6" placeholder="Write about yourself"></textarea>
+                    <textarea id="about" name="about" rows="3" class="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:py-1.5 sm:text-sm sm:leading-6 outline-gray-300" placeholder="Write about yourself"></textarea>
                   </div>
                   <p class="mt-2 text-sm text-gray-500">Brief description for your profile.</p>
                 </div>
@@ -74,11 +74,11 @@ const Form = () => (
         </div>
     </div>
 
-    <div class="hidden sm:block" aria-hidden="true">
+    {/* <div class="hidden sm:block" aria-hidden="true">
       <div class="py-5">
         <div class="border-t border-gray-200"></div>
       </div>
-    </div>
+    </div> */}
 
     <div class="mt-10 sm:mt-0">
         {/* <div class="md:col-span-1">
@@ -94,17 +94,17 @@ const Form = () => (
                 <div class="grid grid-cols-6 gap-6">
                   <div class="col-span-6 sm:col-span-3">
                     <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
-                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"/>
+                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 outline-gray-300"/>
                   </div>
 
                   <div class="col-span-6 sm:col-span-3">
                     <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
-                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"/>
+                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6 outline-gray-300"/>
                   </div>
 
                   <div class="col-span-6 sm:col-span-4">
                     <label for="email-address" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-                    <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"/>
+                    <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 outline-gray-300"/>
                   </div>
 
                   <div class="col-span-6 sm:col-span-3">
@@ -118,12 +118,12 @@ const Form = () => (
 
                   <div class="col-span-6">
                     <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street address</label>
-                    <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"/>
+                    <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6 outline-gray-300"/>
                   </div>
 
                   <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                     <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City</label>
-                    <input type="text" name="city" id="city" autocomplete="address-level2" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"/>
+                    <input type="text" name="city" id="city" autocomplete="address-level2" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6 outline-gray-300"/>
                   </div>
 
                   <div class="col-span-2 sm:col-span-2">
@@ -137,7 +137,7 @@ const Form = () => (
 
                   <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                     <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">ZIP / Postal code</label>
-                    <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"/>
+                    <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6 outline-gray-300"/>
                   </div>
                 </div>
               </div>
@@ -150,11 +150,11 @@ const Form = () => (
     
     </div>
 
-    <div class="hidden sm:block" aria-hidden="true">
+    {/* <div class="hidden sm:block" aria-hidden="true">
       <div class="py-5">
         <div class="border-t border-gray-200"></div>
       </div>
-    </div>
+    </div> */}
 
     <div class="mt-10 sm:mt-0">
         {/* <div class="md:col-span-1">

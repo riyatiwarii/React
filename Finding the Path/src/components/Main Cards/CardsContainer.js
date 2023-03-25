@@ -1,3 +1,4 @@
+import React from "react";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI"
 import { useState , useEffect} from "react";

@@ -1,0 +1,17 @@
+.restaurant-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+  }
+  .restaurant-name {
+    color: rgb(27, 27, 27);
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.9rem;
+    padding: 0.5em 0;
+  }

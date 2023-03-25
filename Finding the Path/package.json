@@ -1,11 +1,10 @@
 {
-  "name": "igniting-our-app",
+  "name": "finding-the-path",
   "version": "1.0.0",
-  "description": " React App is being ignited.",
+  "description": "Finding the path",
   "scripts": {
     "test": "jest",
-    "start": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html"
+    "start": "npx parcel src/index.html"
   },
   "author": "Riya Tiwari",
   "license": "ISC",

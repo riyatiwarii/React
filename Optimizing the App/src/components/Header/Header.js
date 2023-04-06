@@ -1,3 +1,4 @@
+import useStatus from "../../helpers/useStatus"
 import logo from "../../assets/logo/logo2.png"
 import { Link } from "react-router-dom"
 
@@ -5,7 +6,11 @@ const Logo = () => (
     <img className = "logo" src = {logo}></img>
 )
 
-const NavItems = () => (
+const NavItems = () => {
+
+  const online = useStatus()
+
+  return (
     <ul className="navitems" >
         <li><Link to="/"><span>Home</span></Link></li>
         <li><Link to="/about"><span>About us</span></Link></li>
@@ -25,8 +30,10 @@ const NavItems = () => (
         <i className="fa-solid fa-cart-shopping"></i>
         <span>Cart</span>
       </a></li>
-    </ul> 
-)
+      <li><span>{online ? "Online🟢" : "Offline🔴"}</span></li>
+    </ul>
+  )
+}
 
 const HeaderSection = () => (
     <header>

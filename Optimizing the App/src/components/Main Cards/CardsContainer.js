@@ -3,12 +3,20 @@ import RestaurantCard from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI"
 import { useState} from "react";
 import { useSearchRestaurant, useRestaurantData } from "../../helpers/useRestaurant";
+import useStatus from "../../helpers/useStatus";
 
 const RestaurantCardsContainer = () => {
+    const online = useStatus()
     const [searchText, setSearchText] = useState("")
     const [allRestaurantList, filteredRestaurantList, setAllRestaurantList, setFilteredRestaurantList] = useRestaurantData()
     const getFilteredData = useSearchRestaurant(searchText, allRestaurantList)
 
+    if(!online){
+        return (
+          <h1>🔴Offline, Please check your Internet Connection.</h1>
+        )
+      }
+  
     return allRestaurantList.length === 0 ? <ShimmerUI/> : (
         <>
         <div className="food-search">

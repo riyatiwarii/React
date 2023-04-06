@@ -1,11 +1,11 @@
 import HeaderSection from "./Header/Header"
 import RestaurantCardsContainer from "./Main Cards/CardsContainer"
 import { createBrowserRouter } from "react-router-dom"
-import About from "../components/About/About"
 import Contact from "../components/Contact/Contact"
 import Error from "../components/Error/Error"
 import { Outlet } from "react-router-dom"
-import RestaurantMenu from "./Restaurant Menu/RestaurantMenu"
+import { Suspense, lazy } from "react"
+import ShimmerUI from "./Main Cards/ShimmerUI"
 
 const Body = () => (
     <>
@@ -13,6 +13,10 @@ const Body = () => (
     <Outlet></Outlet>
     </>
 )
+
+const About = lazy(() => import("../components/About/About") )
+const RestaurantMenu = lazy(() => import("./Restaurant Menu/RestaurantMenu") )
+
 
 const appRouter = createBrowserRouter([
     {
@@ -26,7 +30,11 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element : <About/>
+                element : (
+                    <Suspense fallback={<ShimmerUI/>}>
+                        <About/>
+                    </Suspense>
+                )
             },
             {
                 path: "/contact",
@@ -34,7 +42,11 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/restaurant/:resid",
-                element: <RestaurantMenu/>
+                element: (
+                    <Suspense fallback={<h1>Loading Menu...</h1>}>
+                        <RestaurantMenu/>
+                    </Suspense>
+                )
             }
         ]
     }

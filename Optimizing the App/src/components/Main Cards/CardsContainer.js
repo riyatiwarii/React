@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI"
 import { useState} from "react";
 import { useSearchRestaurant, useRestaurantData } from "../../helpers/useRestaurant";
 import useStatus from "../../helpers/useStatus";
+import userContext from "../../helpers/userContext";
+
 
 const RestaurantCardsContainer = () => {
+    const {user1, setUser1} = useContext(userContext)
+    console.log(user1.username);
     const online = useStatus()
     const [searchText, setSearchText] = useState("")
     const [allRestaurantList, filteredRestaurantList, setAllRestaurantList, setFilteredRestaurantList] = useRestaurantData()
@@ -20,8 +24,12 @@ const RestaurantCardsContainer = () => {
     return allRestaurantList.length === 0 ? <ShimmerUI/> : (
         <>
         <div className="food-search">
-            <input type="text" name="search" placeholder="Search for restaurants..." value={searchText} onChange = {(e) => {
+            <input type="text" name="search" placeholder="Search for restaurants..." value={user1.username} onChange = {(e) => {
                 setSearchText(e.target.value)
+                setUser1({
+                    username : e.target.value,
+                    password : "Savi&meForever"
+                })
                 if(e.target.value === ""){
                     setFilteredRestaurantList(allRestaurantList)
                 }

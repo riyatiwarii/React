@@ -17,6 +17,7 @@ const BabyAccordian = ({ data }) => {
     </>
   );
 };
+
 const AccordianParent = ({ props }) => {
   return (
     <>

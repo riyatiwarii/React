@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .logo{
     width: 7%;
     padding-top: 1em;
@@ -295,6 +296,26 @@ div.slider#right img:hover{
   margin-right:25px;
 }
 
-div.slide{
-/*   justify-content:center; */
+.accordian-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: beige;
+}
+
+.accordian-para{
+  background-color: rgb(244, 240, 238);
+}
+
+.accordian-item{
+  margin-bottom: 1em;
+}
+
+.accordian-container{
+  width: 40%;
+  margin: auto;
+}
+
+i{
+  cursor: pointer;
 }

@@ -17,7 +17,7 @@ const RestaurantCardsContainer = () => {
 
     if(!online){
         return (
-          <h1>🔴Offline, Please check your Internet Connection.</h1>
+          <h1>🔴Offline, Please check your Internet connection.</h1>
         )
       }
   

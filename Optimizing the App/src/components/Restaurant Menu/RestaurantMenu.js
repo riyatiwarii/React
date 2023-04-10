@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./RestaurantMenu.css"
 import { IMG_CDN_URL } from "../Config/Constants";
-import AccordianParent from "../Accordian/Accordian";
+import AccordianContainer from "../Accordian/Accordian";
 import useRestaurantMenu from "../../helpers/useRestaurantMenu";
 
 const RestaurantMenu = () => {
@@ -27,7 +27,7 @@ const RestaurantMenu = () => {
         </div>
   
         {restaurantMenu.map((card, index) => (
-          <AccordianParent props={card} key={index} />
+          <AccordianContainer props={card} key={index} />
         ))}
         </div>
       </React.Fragment>

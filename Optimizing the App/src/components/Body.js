@@ -7,8 +7,9 @@ import Error from "../components/Error/Error"
 import { Outlet } from "react-router-dom"
 import { Suspense, lazy } from "react"
 import ShimmerUI from "./Main Cards/ShimmerUI"
-import AccordianContainer from "../components/AccordianContainer/AccordianContainer"
 import userContext from "../helpers/userContext"
+import { Provider } from 'react-redux';
+import store from "../store/store"
 
 const Body = () => {
 
@@ -16,12 +17,12 @@ const Body = () => {
     const [user1, setUser1] = useState(user)
     
     return (
-    <>
+    <Provider store={store}>
     <userContext.Provider value={{user1: user1, setUser1: setUser1}}>
     <HeaderSection></HeaderSection>
     <Outlet></Outlet>
     </userContext.Provider>
-    </>
+    </Provider>
     )
 
 }
@@ -58,10 +59,6 @@ const appRouter = createBrowserRouter([
                         <RestaurantMenu/>
                     </Suspense>
                 )
-            },
-            {
-                path: "/offers",
-                element : <AccordianContainer/>
             },
         ]
     }

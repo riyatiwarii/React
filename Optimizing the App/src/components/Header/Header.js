@@ -3,6 +3,7 @@ import logo from "../../assets/logo/logo2.png"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import userContext from "../../helpers/userContext"
+import { useSelector } from 'react-redux';
 
 const Logo = () => (
     <img className = "logo" src = {logo}></img>
@@ -12,6 +13,7 @@ const NavItems = () => {
 
   const online = useStatus()
   const {user1} = useContext(userContext)
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <ul className="navitems" >
@@ -31,7 +33,7 @@ const NavItems = () => {
       </a></li>
         <li><a className='Cart' href=''>
         <i className="fa-solid fa-cart-shopping"></i>
-        <span>Cart</span>
+        <span>Cart {cartItems.length}</span>
       </a></li>
       <li><span>{user1.username + " " + user1.password}</span></li>
       <li><span>{online ? "Online🟢" : "Offline🔴"}</span></li>

@@ -321,3 +321,43 @@ div.slider#right img:hover{
 i{
   cursor: pointer;
 }
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  width: 40px;
+  text-align: center;
+  height: 30px;
+  margin: 0 5px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.minus-btn, .plus-btn {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.minus-btn:hover, .plus-btn:hover {
+  color: #555;
+}
+
+.fa {
+  font-size: 16px;
+}
+
+.menu-item{
+  display: flex;
+  justify-content: space-between;
+}

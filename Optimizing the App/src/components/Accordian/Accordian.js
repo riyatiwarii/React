@@ -1,27 +1,12 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { addItem, removeItem } from "../../store/cartSlice";
-
+import { useSelector } from "react-redux";
 
 const AccordianItem = ({data, index, clicked, onToggle}) => {
   const { title, items } = data.props;
-  const [itemCounts, setItemCounts] = useState(Array(items?.length).fill(0));
-
-  const incrementItemCount = (itemIndex) => {
-    const newCounts = [...itemCounts];
-    newCounts[itemIndex] += 1;
-    setItemCounts(newCounts);
-  }
+  const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
-
-  const decrementItemCount = (itemIndex) => {
-    const newCounts = [...itemCounts];
-    if (newCounts[itemIndex] === 0) {
-      return;
-    }
-    newCounts[itemIndex] -= 1;
-    setItemCounts(newCounts);
-  }
 
   return (
     <div className="accordian-item">
@@ -33,20 +18,20 @@ const AccordianItem = ({data, index, clicked, onToggle}) => {
       </div>
       {
         clicked === index ? <>
-          {items?.map((item, itemIndex) => (
-            <div className="menu-item" key={item.card.info.id}>
+          {items?.map((item, itemIndex) => {
+            const count = cartItems.filter(card => card.id === item.card.info.id)
+            return (
+              <div className="menu-item" key={item.card.info.id}>
               <span>{item.card.info.name} : {Math.round((item.card.info.price)/100)} </span>
               <div className="quantity">
                 <button className="minus-btn" type="button" onClick={() => {
-                  decrementItemCount(itemIndex)
                   dispatch(removeItem(item.card.info.id))
                 }}>
                   <i className="fa fa-minus"></i>
                 </button>
-                <input type="text" name="quantity" value={itemCounts[itemIndex]} />
+                <input type="text" name="quantity" value={count.length} />
                 <button className="plus-btn" type="button" onClick={
                   () => {
-                    incrementItemCount(itemIndex)
                     dispatch(addItem(item.card.info))
                   }
                   }>
@@ -54,7 +39,8 @@ const AccordianItem = ({data, index, clicked, onToggle}) => {
                 </button>
               </div>
             </div>
-          ))}
+            )
+                })}
         </> : <></>
       }
     </div>
@@ -63,7 +49,6 @@ const AccordianItem = ({data, index, clicked, onToggle}) => {
 
 
 const AccordianContainer = (props) => {
-  console.log(props);
   const [ clicked, setClicked ] = useState(false)
   const handleToggle = (index) => {
       if(clicked === index){

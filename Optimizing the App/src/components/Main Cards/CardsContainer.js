@@ -9,7 +9,6 @@ import userContext from "../../helpers/userContext";
 
 const RestaurantCardsContainer = () => {
     const {user1, setUser1} = useContext(userContext)
-    console.log(user1.username);
     const online = useStatus()
     const [searchText, setSearchText] = useState("")
     const [allRestaurantList, filteredRestaurantList, setAllRestaurantList, setFilteredRestaurantList] = useRestaurantData()

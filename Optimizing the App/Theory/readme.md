@@ -118,5 +118,5 @@ const rectArea = function(width, height) {
 *`return width * height`; is nested statement.
 * `width * height` is an expression.
 
-## Q: What is `Conditional Rendering`? explain with a code example.
+## Q: What is `Error Boundaries` in react?
 

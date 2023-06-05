@@ -120,3 +120,65 @@ const rectArea = function(width, height) {
 
 ## Q: What is `Error Boundaries` in react?
 
+Error Boundaries were introduced in React v16 as a way to catch errors that occur in a rendering phase. In the past, the errors caused the app to unmount compeletly and user used to end up with the blank page which was not ideal. 
+
+Error Boundaries provide a way to gracefully handle in React components instead of crashing the application and leave the users confused. With them, we can catch JavaScript runtime errors in our components, act on those errors, and display a fallback UI.
+
+```
+import ErrorBoundary from "error-boundary";
+
+function Users() {
+  return (
+    <div>
+      <ErrorBoundary>
+        <App/>
+      </ErrorBoundary/>
+    </div>
+  )
+}
+```
+
+Error boundaries do not catch errors for:
+
+* Event handlers
+* Asynchronous code
+* Server-side rendering
+* Errors thrown in the error boundary itself
+
+There are a few rules to follow for a component to act as an error boundary:
+
+* It must be a class component 
+* It must define the usage of two methods that are available in React components: `static getDerivedStateFromError` and `componentDidCatch`
+
+```
+import React from 'react';
+
+class MyErrorBoundaryExample extends React.Component {
+  state = {
+    error: null,
+  };
+
+  static getDerivedStateFromError(error) {
+    // Update state so next render shows fallback UI.
+    return { error: error };
+  }
+
+  componentDidCatch(error, info) {
+    // Log the error to an error reporting service
+    logErrorToExampleService(error, info);
+  }
+
+  render() {
+    if (this.state.error) {
+      // You can render any custom fallback UI
+      return <p>Something broke</p>;
+    }
+    return this.props.children;
+  }
+}
+
+export default MyErrorBoundaryExample;
+```
+
+Static getDerivedStateFromError() is used to render a fallback UI after an error has been thrown, while componentDidCatch() is used to log those errors.
+

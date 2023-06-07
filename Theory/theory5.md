@@ -1,5 +1,3 @@
-# Chapter 05 - Let's get Hooked!
-
 ## Q: What is the difference between `Named export`, `Default export`, and `* as export`?
 The `export` declaration is used to export values from a JavaScript module. Exported values can then be imported into other modules with the `import` declaration.
 

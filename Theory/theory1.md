@@ -1,5 +1,3 @@
-# _Chapter 01 - Inception_
-
 ## Q: What is `Emmet`?
 `Emmet` is a plug in for our text editor that allows you to type generate the HTML markup, CSS using Emmet Abbreviations. You can press Ctrl + Space to see the workflow of the code that will be generated(Inside a pop up).
 

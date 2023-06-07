@@ -1,4 +1,3 @@
-# Chapter 03 - Laying the Foundation
 ## Q: What is `JSX`?
 `JSX` is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. It looks like this:
 ```

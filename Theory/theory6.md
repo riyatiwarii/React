@@ -1,4 +1,3 @@
-# Chapter 06 - Exploring the world
 ## Q: What are `Microservices` and `Monolith architecture` and the difference between them?
 
 Microservices were used to overcome the challenges of monolithic architecture that prevailed initially in the market and also enables you to deploy independent services.
@@ -118,5 +117,5 @@ const rectArea = function(width, height) {
 *`return width * height`; is nested statement.
 * `width * height` is an expression.
 
-## Q: What is `Conditional Rendering`? explain with a code example.
+
 

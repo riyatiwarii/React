@@ -1,5 +1,3 @@
-# _Chapter 02 - Igniting our App_
-
 ## Q: What is `NPM`?
 `NPM` doesn't stand for Node Package Manager but everything else i.e. Namaste Package Manager, Nhi Pta Mujhe.
 `npm` is a lot of things by supporting the largest developer ecosystem in the world. 
